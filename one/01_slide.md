@@ -13,7 +13,7 @@
 # Big government agency wants some training #
 
 !SLIDE
-# TDD at the unit level #
+# TDD and unit testing #
 
 !SLIDE bullets
 # Tools #
@@ -24,6 +24,9 @@
 
 !SLIDE
 # The usual process #
+
+!SLIDE
+# Simple GUI calculator example #
 
 !SLIDE
 # Red #
@@ -95,9 +98,6 @@
 !SLIDE
 # Let's take TDD even further #
 
-!SLIDE
-# TDD at the system level with Cucumber #
-
 !SLIDE bullets incremental
 Sample project
 ==============
@@ -107,13 +107,22 @@ Sample project
 * use cucumbers to guide features, use ceedling tools to guide development
 
 !SLIDE
-# slightly modified workflow #
+# TDD at the system level with Cucumber #
 
 !SLIDE
 # Bring in Ruby and Cucumber to help #
 
 !SLIDE
+# slightly modified workflow #
+
+!SLIDE
+# Feature: client can ping the server #
+
+!SLIDE
 # Red system test #
+
+!SLIDE
+# Write a test in Gherkin #
 
 !SLIDE code
     Feature: Ping command
@@ -129,10 +138,30 @@ Sample project
     And the exit status should be 0
 
 !SLIDE
+# Back it up with Ruby #
+
+!SLIDE code
+    When /^I ping the server$/ do
+      TCPSocket.open(IP, PORT) do |conn|
+        conn.puts args.join(' ')
+        @response = conn.gets
+      end
+    end
+
+!SLIDE code
+    Then /^the client should receive
+           a positive response$/ do
+      @response.strip.should == "ACK"
+    end
+
+!SLIDE
 # Red unit tests #
 
 !SLIDE
 # Green unit tests #
+
+!SLIDE
+# Develop units until you think you're done #
 
 !SLIDE
 # Green system tests #
@@ -145,6 +174,14 @@ Sample project
 
 !SLIDE
 # continue developing features #
+
+!SLIDE bullets incremental
+# Workflow #
+* Red system test
+* Red unit tests
+* Green unit tests
+* Refactor units
+* Green system test
 
 !SLIDE code
     Feature: Put and get commands
@@ -169,9 +206,46 @@ Sample project
 * 7 cucumber tests for client
 * 9 cucumber tests for server
 
+!SLIDE
+# So what? #
+
+!SLIDE
+# Just because you're developing C doesn't mean you can't back it up with something else #
+
+!SLIDE
+# Cucumbers don't care how the executables were developed #
+
+!SLIDE code
+    When /^I run the client with
+           parameters "([^"]*)"$/ do |params|
+      When %+I run client.exe #{params}+
+    end
+
+!SLIDE
+# client.exe could be anything #
+
+!SLIDE
+# students in course developed executables in C #
+
+!SLIDE
+# cheater executables - written in Ruby, but pass system tests #
+
+!SLIDE
+# System tests don't care #
+
+!SLIDE
+# Requirement: your system needs clear inputs and outputs #
+
 !SLIDE bullets incremental
-Successes
-=========
+* data over a network (TCP, CAN)
+* command-line parameters and output
+* digital IO ports
+
+!SLIDE
+# Back to the course #
+
+!SLIDE bullets incremental
+# Successes #
 * All groups got client working
 * One - two groups got server working
 * Github repository made pushing fixes and changes easy
