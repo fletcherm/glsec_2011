@@ -7,15 +7,15 @@ GEM
     nokogiri (1.4.4)
     pdfkit (0.5.0)
     rack (1.2.2)
-    showoff (0.4.1)
+    showoff (0.3.4)
       bluecloth
-      gli (>= 1.2.5)
+      gli (>= 1.1.1)
       json
       nokogiri
       sinatra
-    sinatra (1.2.2)
+    sinatra (1.2.3)
       rack (~> 1.1)
-      tilt (< 2.0, >= 1.2.2)
+      tilt (>= 1.2.2, < 2.0)
     tilt (1.2.2)
 
 PLATFORMS
@@ -23,4 +23,4 @@ PLATFORMS
 
 DEPENDENCIES
   pdfkit (= 0.5.0)
-  showoff (= 0.4.1)
+  showoff (= 0.3.4)
