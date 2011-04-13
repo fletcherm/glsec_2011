@@ -7,6 +7,10 @@
 ![AO](AO-symbol-color.png)
 
 !SLIDE
+# latest version at #
+## [http://fletcherm.github.com/glsec_2011](http://fletcherm.github.com/glsec_2011) ##
+
+!SLIDE
 # Context #
 
 !SLIDE
@@ -204,10 +208,10 @@ Sample project
 !SLIDE
 # So what? #
 
-!SLIDE
+!SLIDE smaller
 # Just because you're developing C doesn't mean you can't back it up with something else #
 
-!SLIDE
+!SLIDE smaller
 # Cucumbers don't care how the executables were developed #
 
 !SLIDE code
@@ -263,4 +267,4 @@ Sample project
 !SLIDE
 # Matt Fletcher #
 # Atomic Object #
-# github url #
+## [http://fletcherm.github.com/glsec_2011](http://fletcherm.github.com/glsec_2011) ##
