@@ -126,16 +126,16 @@ Sample project
 
 !SLIDE code
     Feature: Ping command
-    As a client
-    I want to ping the server and see a response
+    As a server
+    I want to respond to clients 
+      wondering if I'm online
 
 !SLIDE code
-    Scenario: Pinging the server
+    Scenario: Responding to a ping
     Given the server is online
     When I ping the server
     Then the client should receive
          a positive response
-    And the exit status should be 0
 
 !SLIDE
 # Back it up with Ruby #
@@ -143,7 +143,7 @@ Sample project
 !SLIDE code
     When /^I ping the server$/ do
       TCPSocket.open(IP, PORT) do |conn|
-        conn.puts args.join(' ')
+        conn.puts "ping"
         @response = conn.gets
       end
     end
@@ -201,11 +201,6 @@ Sample project
     And the pid "99" with the name "ps" should be returned
     And the pid "187" with the name "ruby" should be returned
 
-!SLIDE bullets incremental
-# Totals #
-* 7 cucumber tests for client
-* 9 cucumber tests for server
-
 !SLIDE
 # So what? #
 
@@ -243,6 +238,11 @@ Sample project
 
 !SLIDE
 # Back to the course #
+
+!SLIDE bullets incremental
+# Totals #
+* 7 cucumber tests for client
+* 9 cucumber tests for server
 
 !SLIDE bullets incremental
 # Successes #
