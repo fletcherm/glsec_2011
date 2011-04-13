@@ -1,0 +1,324 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>My Preso</title>
+
+  <link rel="stylesheet" href="./css/reset.css" type="text/css"/>
+  <link rel="stylesheet" href="./css/showoff.css" type="text/css"/>
+
+  <script type="text/javascript" src="./js/jquery-1.4.2.min.js"></script>
+  <script type="text/javascript" src="./js/jquery.cycle.all.js"></script>
+	<script type="text/javascript" src="./js/jquery-print.js"></script>
+  <script type="text/javascript" src="./js/jquery.batchImageLoad.js"></script>
+
+  <script type="text/javascript" src="./js/jquery.doubletap-0.1.js"></script>
+
+  <script type="text/javascript" src="./js/fg.menu.js"></script>
+  <script type="text/javascript" src="./js/showoff.js"></script>
+  <script type="text/javascript" src="./js/jTypeWriter.js"> </script>
+  <script type="text/javascript" src="./js/sh_main.min.js"></script>
+  <script type="text/javascript" src="./js/core.js"></script>
+  <script type="text/javascript" src="./js/showoffcore.js"></script>
+
+  <link type="text/css" href="./css/fg.menu.css" media="screen" rel="stylesheet" />
+  <link type="text/css" href="./css/theme/ui.all.css" media="screen" rel="stylesheet" />
+  <link type="text/css" href="./css/sh_style.css" rel="stylesheet" >
+
+  
+
+  
+
+  <script type="text/javascript">
+  $(function(){
+    setupPreso(false, './');
+  });
+  </script>
+</head>
+
+<body>
+
+
+<a tabindex="0" href="#search-engines" class="fg-button fg-button-icon-right ui-widget ui-state-default ui-corner-all" id="navmenu"><span class="ui-icon ui-icon-triangle-1-s"></span>slides</a>
+<div id="navigation" class="hidden"></div>
+
+<div id="help">
+  <table>
+    <tr><td class="key">space, &rarr;</td><td>next slide</td></tr>
+    <tr><td class="key">&larr;</td><td>previous slide</td></tr>
+    <tr><td class="key">d</td><td>debug mode</td></tr>
+    <tr><td class="key">## &lt;ret&gt;</td><td>go to slide #</td></tr>
+    <tr><td class="key">c</td><td>table of contents (vi)</td></tr>
+    <tr><td class="key">f</td><td>toggle footer</td></tr>
+    <tr><td class="key">r</td><td>reload slides</td></tr>
+    <tr><td class="key">z</td><td>toggle help (this)</td></tr>
+  </table>
+</div>
+
+<div class="buttonNav">
+  <input type="submit" onClick="prevStep();" value="prev"/>
+  <input type="submit" onClick="nextStep();" value="next"/>
+</div>
+
+<div id="preso">loading presentation...</div>
+<div id="footer">
+  <span id="slideInfo"></span>
+  <span id="debugInfo"></span>
+</div>
+
+<div id="slides" class="offscreen" style="display:none;">
+<div class="slide" data-transition="none"><div class="content" ref="one/01_slide/1">
+<h1>Embedded test-driven development in C with Ruby</h1></div>
+</div><div class="slide" data-transition="none"><div class="content center" ref="one/01_slide/2">
+<h1>Matt Fletcher</h1>
+
+<h1>Atomic Object</h1>
+
+<p><img src="file:///Users/fletcher/git/github/glsec_2011/one/AO-symbol-color.png" alt="AO"/></p></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/3">
+<h1>latest version at</h1>
+
+<h2><a href="http://fletcherm.github.com/glsec_2011">http://fletcherm.github.com/glsec_2011</a></h2></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/4">
+<h1>Context</h1></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/5">
+<h1>Big government agency wants some training</h1></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/6">
+<h1>TDD and unit testing</h1></div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="one/01_slide/7">
+<h1>Tools</h1>
+
+<ul>
+<li><a href="http://throwtheswitch.org/white-papers/ceedling-intro.html">Ceedling</a></li>
+<li><a href="http://throwtheswitch.org/white-papers/unity-intro.html">Unity</a></li>
+<li><a href="http://throwtheswitch.org/white-papers/cmock-intro.html">CMock</a></li>
+<li><a href="http://throwtheswitch.org/white-papers/cexception-intro.html">CException</a></li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/8">
+<h1>The usual process</h1></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/9">
+<h1>Simple GUI calculator example</h1></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/10">
+<h1>Red</h1></div>
+</div><div class="slide" data-transition="none"><div class="content smaller" ref="one/01_slide/11">
+<pre class="sh_C"><code>void test_ApplicationPresenter_
+          AllowsNumbersToBeEnteredForTheDivisor() {
+
+  ApplicationView_GetDivisor_ExpectAndReturn("21");
+
+  ApplicationModel_CheckArgumentFormat
+                  _ExpectAndReturn("21", "3", TRUE);
+
+  ApplicationPresenter_DivisorChangedCallback("3");
+}</code></pre></div>
+</div><div class="slide" data-transition="none"><div class="content smaller" ref="one/01_slide/12">
+<pre class="sh_C"><code>void test_ApplicationPresenter_
+          DoesNotAllowNonNumbersToBeEnteredForTheDivisor() {
+
+  ApplicationView_GetDivisor_ExpectAndReturn("21");
+
+  ApplicationModel_CheckArgumentFormat
+                  _ExpectAndReturn("21", "j", FALSE);
+
+  ApplicationView_UndoDivisorTextChange_Expect();
+
+  ApplicationPresenter_DivisorChangedCallback("j");
+}</code></pre></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/13">
+<h1>Green</h1></div>
+</div><div class="slide" data-transition="none"><div class="content smaller" ref="one/01_slide/14">
+<pre class="sh_C"><code>void ApplicationPresenter_
+     DivisorChangedCallback(char* new_text) {
+
+  if (ApplicationModel_CheckArgumentFormat(
+      ApplicationView_GetDivisor(), new_text) == FALSE) {
+
+    ApplicationView_UndoDivisorTextChange();
+  }
+}</code></pre></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/15">
+<h1>Refactor</h1></div>
+</div><div class="slide" data-transition="none"><div class="content smaller bullets" ref="one/01_slide/16">
+<ul>
+<li>nothing needed here because it's already awesome!</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/17">
+<h1>upside</h1></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/18">
+<h1>it's tested</h1></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/19">
+<h1>good day, bad day, corner cases covered</h1></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/20">
+<h1>we know each component works...<em>in isolation</em></h1></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/21">
+<h1>we need to know if these components cooperate</h1></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/22">
+<h1>Let's take TDD even further</h1></div>
+</div><div class="slide" data-transition="none"><div class="content bullets incremental" ref="one/01_slide/23">
+<h1>Sample project</h1>
+
+<ul>
+<li>client - server apps</li>
+<li>put and get (pid, name) tuples for an id</li>
+<li>cucumbers for both client and server</li>
+<li>use cucumbers to guide features, use ceedling tools to guide development</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/24">
+<h1>TDD at the system level with Cucumber</h1></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/25">
+<h1>Bring in Ruby and Cucumber to help</h1></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/26">
+<h1>slightly modified workflow</h1></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/27">
+<h1>Feature: client can ping the server</h1></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/28">
+<h1>Red system test</h1></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/29">
+<h1>Write a test in Gherkin</h1></div>
+</div><div class="slide" data-transition="none"><div class="content code" ref="one/01_slide/30">
+<pre><code>Feature: Ping command
+As a server
+I want to respond to clients 
+  wondering if I'm online
+</code></pre></div>
+</div><div class="slide" data-transition="none"><div class="content code" ref="one/01_slide/31">
+<pre><code>Scenario: Responding to a ping
+Given the server is online
+When I ping the server
+Then the client should receive
+     a positive response
+</code></pre></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/32">
+<h1>Back it up with Ruby</h1></div>
+</div><div class="slide" data-transition="none"><div class="content code" ref="one/01_slide/33">
+<pre><code>When /^I ping the server$/ do
+  TCPSocket.open(IP, PORT) do |conn|
+    conn.puts "ping"
+    @response = conn.gets
+  end
+end
+</code></pre></div>
+</div><div class="slide" data-transition="none"><div class="content code" ref="one/01_slide/34">
+<pre><code>Then /^the client should receive
+       a positive response$/ do
+  @response.strip.should == "ACK"
+end
+</code></pre></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/35">
+<h1>Red unit tests</h1></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/36">
+<h1>Green unit tests</h1></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/37">
+<h1>Develop units until you think you're done</h1></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/38">
+<h1>Green system tests</h1></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/39">
+<h1>Refactor</h1></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/40">
+<h1>Red system test</h1></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/41">
+<h1>continue developing features</h1></div>
+</div><div class="slide" data-transition="none"><div class="content bullets incremental" ref="one/01_slide/42">
+<h1>Workflow</h1>
+
+<ul>
+<li>Red system test</li>
+<li>Red unit tests</li>
+<li>Green unit tests</li>
+<li>Refactor units</li>
+<li>Green system test</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content code" ref="one/01_slide/43">
+<pre><code>Feature: Put and get commands
+As a server
+...
+</code></pre></div>
+</div><div class="slide" data-transition="none"><div class="content code smaller" ref="one/01_slide/44">
+<pre><code>Scenario: Putting and getting multiple pairs
+Given the server is online
+When I put the pid "1" with the name "init" for id "abc"
+And I put the pid "99" with the name "ps" for id "abc"
+And I put the pid "187" with the name "ruby" for id "abc"
+</code></pre></div>
+</div><div class="slide" data-transition="none"><div class="content code smaller" ref="one/01_slide/45">
+<pre><code>When I get the pairs for id "abc"
+Then the pid "1" with the name "init" should be returned
+And the pid "99" with the name "ps" should be returned
+And the pid "187" with the name "ruby" should be returned
+</code></pre></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/46">
+<h1>So what?</h1></div>
+</div><div class="slide" data-transition="none"><div class="content smaller" ref="one/01_slide/47">
+<h1>Just because you're developing C doesn't mean you can't back it up with something else</h1></div>
+</div><div class="slide" data-transition="none"><div class="content smaller" ref="one/01_slide/48">
+<h1>Cucumbers don't care how the executables were developed</h1></div>
+</div><div class="slide" data-transition="none"><div class="content code" ref="one/01_slide/49">
+<pre><code>When /^I run the client with
+       parameters "([^"]*)"$/ do |params|
+  When %+I run client.exe #{params}+
+end
+</code></pre></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/50">
+<h1>client.exe could be anything</h1></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/51">
+<h1>students in course developed executables in C</h1></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/52">
+<h1>cheater executables - written in Ruby, but pass system tests</h1></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/53">
+<h1>System tests don't care</h1></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/54">
+<h1>Requirement: your system needs clear inputs and outputs</h1></div>
+</div><div class="slide" data-transition="none"><div class="content bullets incremental" ref="one/01_slide/55">
+<ul>
+<li>data over a network (TCP, CAN)</li>
+<li>command-line parameters and output</li>
+<li>digital IO ports</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/56">
+<h1>Back to the course</h1></div>
+</div><div class="slide" data-transition="none"><div class="content bullets incremental" ref="one/01_slide/57">
+<h1>Totals</h1>
+
+<ul>
+<li>7 cucumber tests for client</li>
+<li>9 cucumber tests for server</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets incremental" ref="one/01_slide/58">
+<h1>Successes</h1>
+
+<ul>
+<li>All groups got client working</li>
+<li>One - two groups got server working</li>
+<li>Github repository made pushing fixes and changes easy</li>
+<li>Git branches for server, client helped overcome limitations and keep things separated</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets incremental" ref="one/01_slide/59">
+<ul>
+<li>Smart group that enjoyed the course and working together</li>
+<li>Gave good feedback on how to improve course and material</li>
+<li>Very involved and interested in Agile PM discussion</li>
+<li>Hinted another group is interested in training as well</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/60">
+<h1>Questions?</h1></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/61">
+<h1>Matt Fletcher</h1>
+
+<h1>Atomic Object</h1>
+
+<h2><a href="http://fletcherm.github.com/glsec_2011">http://fletcherm.github.com/glsec_2011</a></h2></div>
+</div>
+</div>
+
+</body>
+</html>
