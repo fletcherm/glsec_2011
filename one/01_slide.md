@@ -107,8 +107,6 @@ Sample project
 ==============
 * client - server apps
 * put and get (pid, name) tuples for an id
-* cucumbers for both client and server
-* use cucumbers to guide features, use ceedling tools to guide development
 
 !SLIDE
 # TDD at the system level with Cucumber #
