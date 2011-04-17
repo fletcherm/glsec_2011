@@ -260,6 +260,26 @@ Sample project
 * Hinted another group is interested in training as well
 
 !SLIDE
+# Resources #
+## the following technologies were used to develop the sample project ##
+## _added based on audience feedback_ ##
+
+!SLIDE
+# [Ruby](http://www.ruby-lang.org/en/) #
+
+!SLIDE
+# [Cucumber](https://github.com/aslakhellesoy/cucumber/wiki) #
+## includes links to Cucumber impls for several platforms beyond Ruby ##
+
+!SLIDE
+# [aruba](https://github.com/aslakhellesoy/aruba) #
+## CLI Steps for Cucumber ##
+
+!SLIDE
+# [Ceedling](http://throwtheswitch.org/) #
+## for developing test-first C projects ##
+
+!SLIDE
 # Questions? #
 
 !SLIDE
